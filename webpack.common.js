@@ -4,7 +4,7 @@ const HtmlWebpackRootPlugin = require("html-webpack-root-plugin");
 
 module.exports = {
 	entry: "./src/index.tsx",
-	devtool: "inline-source-map",
+	// devtool: "inline-source-map",
 	module: {
 		rules: [
 			{
@@ -21,13 +21,17 @@ module.exports = {
 	},
 	resolve: {
 		extensions: [".js", ".jsx", ".tsx", ".ts"],
+		modules: [
+			path.resolve(__dirname, "src"),
+			path.resolve(__dirname, "node_modules"),
+		],
 	},
-	devServer: {
-		contentBase: path.join(__dirname, "dist"),
-		compress: true,
-		hot: true,
-		port: 9000,
-	},
+	// devServer: {
+	// 	contentBase: path.join(__dirname, "dist"),
+	// 	compress: true,
+	// 	hot: true,
+	// 	port: 9000,
+	// },
 	output: {
 		filename: "bundle.js",
 		path: path.resolve(__dirname, "dist"),
