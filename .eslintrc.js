@@ -21,11 +21,20 @@ module.exports = {
 		ecmaVersion: 2018,
 		sourceType: "module",
 	},
-	plugins: ["react", "@typescript-eslint"],
+	plugins: ["react", "@typescript-eslint", "react-hooks"],
 	rules: {
 		indent: ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
+		"no-unused-vars": "off",
+		"no-console": "error",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+	},
+	settings: {
+		react: {
+			version: "detect",
+		},
 	},
 };
