@@ -9,6 +9,7 @@ module.exports = merge(common, {
 		contentBase: path.join(__dirname, "public"),
 		compress: true,
 		hot: true,
+		inline: true,
 		port: 9000,
 		historyApiFallback: true,
 	},

@@ -19,36 +19,6 @@ module.exports = {
 				use: ["style-loader", "css-loader"],
 				exclude: /node_modules/,
 			},
-			{
-				test: /\.less$/,
-				use: [
-					{
-						loader: "style-loader", // creates style nodes from JS strings
-					},
-					{
-						loader: "css-loader", // translates CSS into CommonJS
-					},
-					{
-						loader: "less-loader", // compiles Less to CSS
-						options: {
-							javascriptEnabled: true,
-							modifyVars: { "menu-collapsed-width": "50px" },
-						},
-					},
-				],
-			},
-			{
-				test: /\.(png|svg|jpg|gif)$/,
-				use: {
-					loader: "file-loader",
-					options: {
-						loader: "image-webpack-loader",
-						options: {
-							disable: true, // webpack@2.x and newer
-						},
-					},
-				},
-			},
 		],
 	},
 	resolve: {
