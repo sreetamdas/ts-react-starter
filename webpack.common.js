@@ -1,3 +1,4 @@
+const Dotenv = require("dotenv-webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackRootPlugin = require("html-webpack-root-plugin");
@@ -30,7 +31,7 @@ module.exports = {
 	},
 	output: {
 		filename: "bundle.js",
-		path: path.resolve(__dirname, "public"),
+		path: path.resolve(__dirname, "build"),
 		publicPath: "/",
 	},
 	plugins: [
@@ -39,6 +40,9 @@ module.exports = {
 			filename: "index.html", //relative to root of the application
 		}),
 		new HtmlWebpackRootPlugin(),
+		new Dotenv({
+			path: path.resolve(__dirname, ".env"),
+		}),
 		// new AntdDayjsWebpackPlugin(),
 	],
 	optimization: {
